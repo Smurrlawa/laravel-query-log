@@ -27,8 +27,6 @@ final readonly class GlobalQueryLogger implements QueryLogger
             'sql' => $sql,
             'bindings' => $bindings,
             'time_ms' => $time,
-            'file' => debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS, 2)[1]['file'] ?? null,
-            'line' => debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS, 2)[1]['line'] ?? null,
         ]);
     }
 
