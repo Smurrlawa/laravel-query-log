@@ -40,5 +40,4 @@ class QueryLoggerTest extends TestCase
 
         DB::select('SELECT 1');
     }
-
 }

@@ -6,7 +6,6 @@ use InvalidArgumentException;
 
 interface QueryLogger
 {
-
     /**
      * Log a query execution.
      *
@@ -31,5 +30,4 @@ interface QueryLogger
      * @throws InvalidArgumentException
      */
     public function getChannel(): string;
-
 }

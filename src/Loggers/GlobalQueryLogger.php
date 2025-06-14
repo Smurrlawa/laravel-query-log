@@ -17,7 +17,7 @@ final readonly class GlobalQueryLogger implements QueryLogger
      */
     public function log(string $sql, array $bindings, float $time): void
     {
-        if (!$this->isEnabled()) {
+        if (! $this->isEnabled()) {
             return;
         }
 
@@ -35,11 +35,11 @@ final readonly class GlobalQueryLogger implements QueryLogger
      */
     public function isEnabled(): bool
     {
-        if (!config('query-logger.enabled', true)) {
+        if (! config('query-logger.enabled', true)) {
             return false;
         }
 
-        if (!in_array(app()->environment(), config('query-logger.environments', []), true)) {
+        if (! in_array(app()->environment(), config('query-logger.environments', []), true)) {
             return false;
         }
 

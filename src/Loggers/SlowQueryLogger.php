@@ -17,7 +17,7 @@ final readonly class SlowQueryLogger implements QueryLogger
      */
     public function log(string $sql, array $bindings, float $time): void
     {
-        if (!$this->isEnabled()) {
+        if (! $this->isEnabled()) {
             return;
         }
 
@@ -36,7 +36,7 @@ final readonly class SlowQueryLogger implements QueryLogger
 
     public function isEnabled(): bool
     {
-        if (!config('query-logger.slow_queries_enabled', true)) {
+        if (! config('query-logger.slow_queries_enabled', true)) {
             return false;
         }
 
@@ -44,7 +44,7 @@ final readonly class SlowQueryLogger implements QueryLogger
             throw new \InvalidArgumentException('Slow queries threshold must be greater than 0.');
         }
 
-        if (!in_array(app()->environment(), config('query-logger.environments', []), true)) {
+        if (! in_array(app()->environment(), config('query-logger.environments', []), true)) {
             return false;
         }
 
