@@ -1,0 +1,46 @@
+{
+    "name": "smurrlawa/laravel-query-logger",
+    "description": "A Laravel package to log all database queries to a configurable log channel or handler.",
+    "keywords": [
+        "smurrlawa",
+        "laravel-query-logger"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "André Glaser"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "illuminate/support": "^11.0|^12.0",
+        "illuminate/database": "^11.0|^12.0",
+        "illuminate/log": "^11.0|^12.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^10.4",
+        "phpunit/phpunit": "^12.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Smurrlawa\\QueryLogger\\": "src/"
+        }
+    },
+    "scripts": {
+        "analyse": "vendor/bin/phpstan analyse",
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Smurrlawa\\QueryLogger\\QueryLoggerServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

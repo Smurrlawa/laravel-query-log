@@ -1,0 +1,60 @@
+
+# Laravel Query Logger
+
+A simple Laravel package to log all database queries to a configurable log channel, enabled by environment and fully configurable.
+
+## Installation
+
+```bash
+composer require smurrlawa/laravel-query-logger
+```
+
+## Configuration
+
+Publish the config file:
+
+```bash
+php artisan vendor:publish --tag=query-logger-config
+```
+
+This will create a `config/query-logger.php` file where you can customize the package behavior.
+
+### Configuration Options
+
+```php
+return [
+    'enabled' => env('QUERY_LOGGER_ENABLED', true),
+
+    'environments' => [
+        'local',
+        'staging',
+        'production',
+    ],
+
+    'channel' => env('QUERY_LOGGER_CHANNEL', 'daily'),
+];
+```
+
+- `enabled`: Whether the logger is active.
+- `environments`: Environments where logging should be active.
+- `channel`: Logging channel (as defined in `config/logging.php`).
+
+## Usage
+Once installed and configured, all SQL queries will be logged automatically in the configured channel.
+You can adjust logging behavior by editing the `config/query-logger.php` file.
+
+## Example
+To log only in `local` environment and to the `daily` log channel:
+
+```php
+// .env
+APP_ENV=local
+QUERY_LOGGER_ENABLED=true
+QUERY_LOGGER_CHANNEL=daily
+```
+
+## Compatibility
+Supports Laravel 11 and 12.
+
+## License
+MIT
