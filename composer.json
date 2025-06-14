@@ -6,6 +6,7 @@
         "laravel-query-logger"
     ],
     "license": "MIT",
+    "version": "0.1.0",
     "authors": [
         {
             "name": "André Glaser"
@@ -28,8 +29,7 @@
     },
     "scripts": {
         "analyse": "vendor/bin/phpstan analyse",
-        "test": "vendor/bin/phpunit",
-        "test-coverage": "vendor/bin/phpunit --coverage"
+        "test": "vendor/bin/phpunit"
     },
     "config": {
         "sort-packages": true

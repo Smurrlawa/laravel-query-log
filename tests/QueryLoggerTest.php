@@ -1,10 +1,7 @@
 <?php
 
-namespace Smurrlawa\QueryLogger\Tests;
-
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
-use Mockery;
 use Orchestra\Testbench\TestCase;
 use Smurrlawa\QueryLogger\QueryLoggerServiceProvider;
 
